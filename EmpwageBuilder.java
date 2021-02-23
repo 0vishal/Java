@@ -3,25 +3,36 @@ import java.util.Scanner;
 public class EmpwageBuilder {
 
     public static void main(String args[]) {
+            //VARIABLES
             int EMPWAGEPERHOUR = 20;
-            int EMPTIME = 0;
-            int DAYS_IN_MONTH = 20;
+            int EMPHOUR = 8;
+            int MAX_HOURS = 100;
+            int DAYS_OF_MONTH = 20;
 
-            System.out.println("Calculate wage 1.FullTime 2.PartTime");
-            Scanner scan = new Scanner(System.in);
-            int TIME = scan.nextInt();
+            //CONSTANTS
+            int emphour = 0, dailywage = 0, day = 1, hours = 0,monthlywage = 0;
 
-            switch (TIME) {
-                case 1:
-                    EMPTIME = 8;
-                case 2:
-                    EMPTIME = 4;
+            while(day < DAYS_OF_MONTH && hours != MAX_HOURS) {
+                int empcheck = (int) Math.floor(Math.random() *10) % 3;
 
+                switch (empcheck) {
+                    case 1:
+                        emphour = 8;
+                        break;
+                    case 2:
+                        emphour = 4;
+                        break;
+                    default:
+                        emphour = 0;
+                }
+
+                day = day+1;
+                hours = hours+emphour;
+                dailywage = (emphour * EMPWAGEPERHOUR);
+                System.out.println("daily wage " + dailywage);
+                monthlywage = monthlywage + dailywage;
             }
 
-            int DAILYWAGE = (EMPTIME * EMPWAGEPERHOUR);
-            int MONTHLYWAGE = (DAYS_IN_MONTH * DAILYWAGE);
-
-            System.out.println("Monthly wage is " + MONTHLYWAGE);
+            System.out.println(monthlywage);
         }
 }
