@@ -3,15 +3,15 @@ import java.util.Scanner;
 public class EmpwageBuilder {
 
     public static void main(String args[]) {
-            //VARIABLES
+            //Constants
             int EMPWAGEPERHOUR = 20;
             int EMPHOUR = 8;
             int MAX_HOURS = 100;
             int DAYS_OF_MONTH = 20;
 
-            //CONSTANTS
+            //Variables
             int emphour = 0, dailywage = 0, day = 1, hours = 0,monthlywage = 0;
-
+	    //Computation
             while(day < DAYS_OF_MONTH && hours != MAX_HOURS) {
                 int empcheck = (int) Math.floor(Math.random() *10) % 3;
 
